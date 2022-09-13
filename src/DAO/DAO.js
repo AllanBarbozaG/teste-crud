@@ -30,7 +30,7 @@ class DAO {
     })
   }
 
-  static listAllTasks(query) {
+  static listAll(query) {
 
     return new Promise((resolve, reject) => {
       Database.all(query, (error, res) => {
@@ -43,7 +43,7 @@ class DAO {
     })
   }
 
-  static insertNewTask(task, query) {
+  static insert(task, query) {
 
     const reqBody = Object.values(task)
 
