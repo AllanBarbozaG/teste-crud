@@ -27,6 +27,30 @@ body {
   min-height: 100vh;
 }
 
+
+#methods-select {
+  width: 20rem;
+  margin-top: 4rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.74);  
+}
+
+#methods-select option {
+  width: 20rem;
+  margin-bottom: 2rem;
+  height: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.74);  
+}
+
+#options-div {
+  width: 100%;
+  height: auto;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -45,11 +69,11 @@ form {
   flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 2rem;
+ 
   justify-content: center;
 }
 
-#championCard {
+.championCard {
   width: 45%;
   margin-left: 3rem;
   margin-bottom: 3rem;
@@ -60,6 +84,10 @@ form {
   display: flex;
   background-color: orange;
   align-items: center;
+}
+
+#champion-card-id-0, #champion-card-id-1 {
+  margin-top: 3rem;
 }
 
 #championCard img {
@@ -77,7 +105,7 @@ form {
 }
 
 #delete-div {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
 }

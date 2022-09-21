@@ -71,8 +71,8 @@ function App() {
         <select
           name="methods"
           id="methods-select"
+          value="O que deseja fazer?"
           onChange={(e) => {
-            console.log(e.target.value);
             if (e.target.value == "registerChampion") {
               setShowChampionsList(false);
               setShowUpdateChampionForm(false);
@@ -104,7 +104,11 @@ function App() {
           {selectedMethod == "listChampions" &&
             championsList.map((champion, index) => {
               return (
-                <div id="championCard" key={index}>
+                <div
+                  id={`champion-card-id-${index}`}
+                  className="championCard"
+                  key={index}
+                >
                   <img src={champion.image} alt="imagem" />
 
                   <div id="champion-infos">
@@ -163,13 +167,19 @@ function App() {
           {selectedMethod == "updateChampion" && (
             <form action="send">
               <FormInput
+                type="number"
                 name="champions-id"
                 placeholder="id do campeão"
                 callback={(e) => {
                   setChampionId(e.target.value);
                 }}
               />
-              {championId && <UpdateChampion championId={championId} />}
+              {championId && (
+                <UpdateChampion
+                  championId={championId}
+                  setChampionId={setChampionId}
+                />
+              )}
             </form>
           )}
           {selectedMethod == "deleteChampion" && (

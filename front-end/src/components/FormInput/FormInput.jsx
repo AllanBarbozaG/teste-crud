@@ -1,10 +1,10 @@
 import { StyledInput } from "./style";
 
-function FormInput({ placeholder, name, callback, value }) {
+function FormInput({ type, placeholder, name, callback, value }) {
   return (
     <>
       <StyledInput
-        type="text"
+        type={type}
         placeholder={placeholder}
         name={name}
         onChange={callback}
