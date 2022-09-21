@@ -1,0 +1,37 @@
+.champion-info {
+  width: 15rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #ffffffb5;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+#update-div {
+  display: flex;
+  width: 75%;
+  justify-content: space-around;
+  min-height: 25rem;
+}
+
+#inputs-div {
+  display: flex;
+  flex-direction: column;
+}
+
+#curret-champion-infos h5,
+#inputs-div h5 {
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  margin-top: 0;
+}
+
+#curret-champion-infos input {
+  width: 20rem;
+  
+  height: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.74);  
+}
