@@ -1,8 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
-import Tasks from './src/controller/TasksControlller.js';
- 
+import Champions from './src/controller/Champions.js';
 
 dotenv.config()
 
@@ -12,7 +11,6 @@ const app = express();
 
 app.listen(port, () => {
   console.log(`Servidor rodando no endereço http://localhost:${port}`)
-  console.log('Funcinou')
 })
 
 app.use(express.json());
@@ -24,7 +22,7 @@ app.use((req, res, next) => {
   next();
 })
 
-Tasks.routes(app)
+Champions.routes(app)
 
 
 

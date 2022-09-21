@@ -43,17 +43,55 @@ class DAO {
     })
   }
 
-  static insert(task, query) {
+  static listChampion(id, query) {
+    return new Promise((resolve, reject) => {
+      Database.get(query, id, (error, result) => {
+        if (error) {
+          reject(error.message)
+        } else {
+          resolve(result)
+        }
+      })
+    })
+  }
 
-    const reqBody = Object.values(task)
+  static async insert(champion, query) {
+
+    const reqBody = Object.values(champion)
 
     return new Promise((resolve, reject) => {
 
       Database.run(query, [...reqBody], (error) => {
-        if(error) {
+        if (error) {
+          reject({ error: true, message: error.message })
+        } else {
+          resolve("Campeão registrado com sucesso.")
+        }
+      })
+    }).catch(error => console.log(error))
+  }
+
+  static update(id, entity, query) {
+    const body = Object.values(entity)
+
+    return new Promise((resolve, reject) => {
+      Database.run(query, [...body, id], (error) => {
+        if (error) {
           reject(error.message)
         } else {
-          resolve("Tarefa incluída com sucesso.")
+          resolve("Campeão atualizado com sucesso.")
+        }
+      })
+    })
+  }
+
+  static deleteById(query, id) {
+    return new Promise((resolve, reject) => {
+      Database.run(query, id, (error) => {
+        if (error) {
+          reject(error.message)
+        } else {
+          resolve("Campeão deletado com sucesso.")
         }
       })
     })
